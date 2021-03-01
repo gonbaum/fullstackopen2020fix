@@ -1,0 +1,27 @@
+
+
+user->browser: Adds a new note and clicks on submit button
+
+note over browser:
+Browser submits a JSON object with the note data via POST
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/notes/new_note
+
+
+note over server:
+The server receives JSON object, parses it and saves it.
+also redirect to https://fullstack-exampleapp.herokuapp.com/notes
+end note
+
+server-->browser: redirect to https://fullstack-exampleapp.herokuapp.com/notes
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+Browser re-renders the page with the new note included.
+end note
+

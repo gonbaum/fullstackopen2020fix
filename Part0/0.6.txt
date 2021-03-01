@@ -1,0 +1,21 @@
+
+
+user->browser: Adds a new note and clicks on submit button
+note over browser:
+Browser receives JSON object, parses it and saves it.
+end note
+browser->browser: The browser re-renders the page
+
+
+note over browser:
+Browser sends a JSON object with the note's data a new note
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+
+note over server:
+Server saves this new note into the database
+end note
+
+server-->browser: Send status code
